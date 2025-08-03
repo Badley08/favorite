@@ -1,0 +1,604 @@
+/* Reset de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Typography & Readability */
+body {
+    font-family: 'Open Sans', Arial, sans-serif;
+    padding: 1rem;
+    transition: background 0.4s ease, color 0.4s ease, text-shadow 0.4s ease;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f7f6;
+}
+
+/* Layout & Spacing - Main container */
+main {
+    max-width: 960px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #2c3e50;
+    color: white;
+    padding: 1rem 1.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+header h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+}
+
+.hamburger-btn {
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.theme-menu {
+    position: absolute;
+    right: 1rem;
+    top: 5rem;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    z-index: 1000;
+    padding: 0.5rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.theme-menu.hidden {
+    display: none;
+}
+
+.theme-menu ul {
+    list-style: none;
+}
+
+.theme-btn {
+    display: block;
+    padding: 0.7rem 1rem;
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+    font-size: 1rem;
+    transition: background-color 0.2s ease;
+}
+
+.theme-btn:hover {
+    background-color: #f0f0f0;
+}
+
+.install-btn {
+    color: #2c3e50 !important;
+    font-weight: 600;
+}
+
+.install-btn:hover {
+    background-color: #e8f5e8 !important;
+}
+
+/* Input groups */
+.input-group {
+    display: flex;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+input, select {
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    flex: 1;
+    min-width: 150px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #3498db;
+    color: white;
+    transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+    white-space: nowrap;
+}
+
+button:hover {
+    background-color: #2980b9;
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.delete-btn {
+    background-color: #e74c3c;
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+    margin-left: 0.5rem;
+}
+
+.delete-btn:hover {
+    background-color: #c0392b;
+}
+
+section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #eee;
+    transition: color 0.4s ease, border-color 0.4s ease, text-shadow 0.4s ease;
+}
+
+/* Catégories & Liens */
+.links-container {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.category {
+    margin-bottom: 0;
+    padding: 1.5rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease, background-color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.category:hover {
+    transform: translateY(-3px);
+}
+
+.category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.category h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: #34495e;
+    font-size: 1.3rem;
+    transition: color 0.4s ease, text-shadow 0.4s ease;
+    margin: 0;
+}
+
+.category-type {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+ .kofi-button-small img {
+    width: 170px; /* Ou la taille que vous préférez, par exemple 48px, 64px */
+    height: auto; /* Pour maintenir les proportions de l'image */
+  }
+
+/* --- THÈME LIGHT (EXISTANT) --- */
+/* Ce thème utilise les styles par défaut du body */
+body[data-theme="light"] {
+    background-color: #f4f7f6;
+    color: #333;
+}
+body[data-theme="light"] header {
+    background: #2c3e50;
+    color: white;
+    border-bottom: none; /* Reset if other themes add border */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+body[data-theme="light"] header h1,
+body[data-theme="light"] section h2,
+body[data-theme="light"] .category h3 {
+    color: #2c3e50;
+    text-shadow: none;
+    text-decoration: none;
+}
+body[data-theme="light"] button {
+    background-color: #3498db;
+    color: white;
+    text-shadow: none;
+    border: none;
+}
+body[data-theme="light"] .category {
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+body[data-theme="light"] a {
+    color: #3498db; /* Default link blue */
+    text-decoration: none;
+    text-shadow: none;
+}
+body[data-theme="light"] input,
+body[data-theme="light"] select {
+    background-color: white;
+    border: 1px solid #ccc;
+    color: #333;
+}
+body[data-theme="light"] section h2 {
+    border-bottom-color: #eee;
+}
+
+
+/* --- THÈME DARK --- */
+body[data-theme="dark"] {
+    background-color: #1a1a2e; /* Deep purple-blue */
+    color: #e0e0e0; /* Off-white for text */
+}
+body[data-theme="dark"] header {
+    background: #0f0f1d; /* Even darker header */
+    color: #f0f0f0;
+    border-bottom: 1px solid #3a3a5d;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+body[data-theme="dark"] header h1,
+body[data-theme="dark"] section h2,
+body[data-theme="dark"] .category h3 {
+    color: #bb86fc; /* A vibrant, but not overly bright, purple */
+    text-shadow: 0 0 5px rgba(187, 134, 252, 0.3);
+    text-decoration: none;
+}
+body[data-theme="dark"] button {
+    background-color: #bb86fc; /* Purple */
+    color: #1a1a2e;
+    text-shadow: none;
+    border: none;
+}
+body[data-theme="dark"] .category {
+    background: #2c2c4d; /* Darker background for cards */
+    border: 1px solid #4a4a7d;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    backdrop-filter: none; /* No blur for a solid dark theme */
+    -webkit-backdrop-filter: none;
+}
+body[data-theme="dark"] a {
+    color: #03dac6; /* Teal accent for links */
+    text-decoration: none;
+    text-shadow: 0 0 3px rgba(3, 218, 198, 0.2);
+}
+body[data-theme="dark"] input,
+body[data-theme="dark"] select {
+    background-color: #22223b; /* Darker input fields */
+    border: 1px solid #4a4a7d;
+    color: #f0f0f0;
+}
+body[data-theme="dark"] section h2 {
+    border-bottom-color: #4a4a7d;
+}
+body[data-theme="dark"] .hamburger-btn {
+    color: #f0f0f0;
+}
+body[data-theme="dark"] .theme-menu {
+    background: #22223b;
+    border: 1px solid #4a4a7d;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+body[data-theme="dark"] .theme-btn {
+    color: #e0e0e0;
+}
+body[data-theme="dark"] .theme-btn:hover {
+    background-color: #3a3a5d;
+}
+body[data-theme="dark"] .install-btn {
+    color: #03dac6 !important;
+}
+body[data-theme="dark"] .install-btn:hover {
+    background-color: #03dac633 !important; /* Lighter teal for hover */
+}
+body[data-theme="dark"] .delete-btn {
+    background-color: #a04040; /* Darker red for delete */
+}
+body[data-theme="dark"] .delete-btn:hover {
+    background-color: #803030;
+}
+body[data-theme="dark"] .category-type {
+    color: #a0a0c0; /* Lighter grey for category type */
+}
+
+
+/* --- THÈME HACKER (REVISITÉ : "MATRIX") --- */
+body[data-theme="hacker"] {
+    background-color: #020a02;
+    background-image: linear-gradient(rgba(0, 255, 0, 0.05) 1px, transparent 1px);
+    background-size: 100% 3px;
+    color: #00ff00;
+    font-family: 'Share Tech Mono', monospace;
+}
+body[data-theme="hacker"] * {
+    font-family: 'Share Tech Mono', monospace !important;
+}
+body[data-theme="hacker"] header {
+    background: rgba(5, 20, 5, 0.5);
+    border-bottom: 1px solid rgba(0, 255, 0, 0.3);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+body[data-theme="hacker"] header h1, 
+body[data-theme="hacker"] section h2, 
+body[data-theme="hacker"] .category h3 {
+    color: #33ff33;
+    text-shadow: 0 0 5px #00ff00, 0 0 10px rgba(0, 255, 0, 0.7);
+    text-decoration: none;
+}
+body[data-theme="hacker"] .category {
+    background: rgba(0, 15, 0, 0.4);
+    border: 1px solid rgba(0, 255, 0, 0.2);
+    box-shadow: inset 0 0 15px rgba(0, 255, 0, 0.15), 0 0 10px rgba(0, 255, 0, 0.2);
+}
+body[data-theme="hacker"] input, 
+body[data-theme="hacker"] select {
+    background: #0a140a;
+    border: 1px solid rgba(0, 255, 0, 0.5);
+    color: #00ff00;
+}
+body[data-theme="hacker"] button {
+    background-color: #00ff00;
+    color: #000000;
+    border: 1px solid #00ff00;
+    text-shadow: none;
+}
+body[data-theme="hacker"] a {
+    color: #55ff55;
+    text-decoration: none;
+    text-shadow: 0 0 4px #55ff55;
+}
+body[data-theme="hacker"] a:hover {
+    color: #ffffff;
+    background-color: #00ff00;
+}
+
+/* --- THÈME NÉON (REVISITÉ : "CYBERPUNK") --- */
+body[data-theme="neon"] {
+    background-color: #0a043c;
+    color: #a9a6c9;
+}
+body[data-theme="neon"] header {
+    background: linear-gradient(to right, #130754, #0a043c);
+    border-bottom: 1px solid rgba(0, 168, 255, 0.3);
+}
+body[data-theme="neon"] header h1,
+body[data-theme="neon"] section h2,
+body[data-theme="neon"] .category h3 {
+    color: #00a8ff; /* Bleu électrique */
+    text-shadow: 0 0 4px #00a8ff, 0 0 8px #00a8ff, 0 0 12px rgba(0, 168, 255, 0.7);
+    text-decoration: none;
+}
+body[data-theme="neon"] button {
+    background-color: #05fdd8; /* Cyan */
+    color: #0a043c;
+    text-shadow: none;
+    border: none;
+}
+body[data-theme="neon"] .category {
+    background: rgba(19, 7, 84, 0.7);
+    border-width: 1px;
+    border-style: solid;
+    border-image: linear-gradient(to bottom, #00a8ff, #05fdd8) 1;
+    box-shadow: 0 0 20px rgba(0, 168, 255, 0.3);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+}
+body[data-theme="neon"] a {
+    color: #05fdd8;
+    text-decoration: none;
+    text-shadow: 0 0 5px #05fdd8;
+}
+body[data-theme="neon"] input, 
+body[data-theme="neon"] select {
+    background-color: #130754;
+    border: 1px solid rgba(0, 168, 255, 0.5);
+    color: #f0f0f0;
+}
+
+
+/* --- THÈME VERRE (MODIFIÉ) --- */
+body[data-theme="glass"] {
+    /* Background with a slightly cooler/bluer tint for distinction from light */
+    background: radial-gradient(circle at top left, rgba(230, 245, 255, 1) 0%, rgba(200, 220, 240, 1) 100%);
+    color: #444; /* Slightly darker default text for contrast */
+}
+
+body[data-theme="glass"] header {
+    background: rgba(255, 255, 255, 0.55); /* More opaque for glass header */
+    backdrop-filter: blur(15px); /* Increased blur */
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Stronger border */
+    border-bottom: 1px solid rgba(150, 180, 220, 0.5); /* Distinct bottom border */
+    box-shadow: 0 10px 40px 0 rgba(31, 38, 135, 0.15); /* More pronounced shadow */
+    color: #333; /* Header text color */
+}
+
+body[data-theme="glass"] .category {
+    background: rgba(255, 255, 255, 0.5); /* Slightly more opaque background */
+    backdrop-filter: blur(12px); /* Consistent blur */
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.7); /* Stronger, more visible border */
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1); /* More pronounced shadow */
+    transition: transform 0.5s ease, background-color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+body[data-theme="glass"] header h1,
+body[data-theme="glass"] section h2,
+body[data-theme="glass"] .category h3 {
+    color: #2a5280; /* A distinct blue-grey for headings */
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+body[data-theme="glass"] section h2 {
+    border-bottom-color: rgba(150, 180, 220, 0.4); /* Blue-tinted border */
+}
+
+body[data-theme="glass"] .category h3 {
+    color: #366799; /* Slightly different blue for category titles */
+}
+
+body[data-theme="glass"] input,
+body[data-theme="glass"] select {
+    background-color: rgba(255, 255, 255, 0.8); /* Slightly more opaque inputs */
+    border: 1px solid rgba(150, 180, 220, 0.6); /* Blue-tinted border */
+    color: #333;
+}
+
+body[data-theme="glass"] button {
+    background-color: rgba(100, 170, 255, 0.8); /* A soft blue button */
+    color: white;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    border: 1px solid rgba(100, 170, 255, 0.9);
+}
+body[data-theme="glass"] button:hover {
+    background-color: rgba(80, 150, 230, 0.9);
+}
+
+body[data-theme="glass"] a {
+    color: #007bff; /* Standard blue for links */
+    text-decoration: none;
+    text-shadow: 0 0 1px rgba(0,0,0,0.05); /* Very subtle link shadow */
+}
+
+body[data-theme="glass"] .theme-menu {
+    background: rgba(255, 255, 255, 0.7); /* Glassy menu background */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 20px rgba(31, 38, 135, 0.1);
+}
+
+body[data-theme="glass"] .theme-btn {
+    color: #333;
+}
+body[data-theme="glass"] .theme-btn:hover {
+    background-color: rgba(0,0,0,0.05);
+}
+body[data-theme="glass"] .install-btn {
+    color: #007bff !important;
+}
+body[data-theme="glass"] .install-btn:hover {
+    background-color: rgba(0, 123, 255, 0.1) !important;
+}
+body[data-theme="glass"] .delete-btn {
+    background-color: rgba(231, 76, 60, 0.7);
+    color: white;
+}
+body[data-theme="glass"] .delete-btn:hover {
+    background-color: rgba(192, 57, 43, 0.8);
+}
+body[data-theme="glass"] .category-type {
+    color: #8899aa;
+}
+
+
+/*----Menu Hamburger----*/
+#menu-options {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 10px;
+  top: 70px; /* Adjust based on h1 size */
+  background: rgba(0, 0, 0, 0.9); /* More opaque background */
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+  gap: 10px;
+  animation: slideDown 0.3s ease-out;
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+}
+#hamburger-menu:hover {
+  transform: rotate(90deg);
+  color: var(--accent);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px;
+  font-size: 14px;
+  color: #888;
+  border-top: 1px solid #eee;
+  transition: color 0.3s, border-top-color 0.3s;
+}
+.links-container a {
+    color: #3498db; /* Default link blue */
+    text-decoration: none;
+    transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+.links-container a:hover {
+    color: #2980b9; /* Darker blue on hover */
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.2); /* Subtle glow effect */
+}
+.links-container a:visited {
+    color: #8e44ad; /* Purple for visited links */
+    text-decoration: underline; /* Underline for visited links */
+    text-shadow: none; /* No shadow for visited links */
+    font-weight: 600;
+}
+body[data-theme="glass"] footer {
+    color: #666; /* Lighter grey for footer text */
+    border-top-color: rgba(255, 255, 255, 0.1);
+}
+body[data-theme="glass"] footer:hover {
+    color: #444; /* Darker grey on hover */
+    border-top-color: rgba(255, 255, 255, 0.2);
+}
+body[data-theme="dark"] footer {
+    color: #bbb; /* Lighter grey for dark theme footer */
+    border-top-color: rgba(255, 255, 255, 0.1);
+}
+body[data-theme="dark"] footer:hover {
+    color: #eee; /* Lighter grey on hover */
+    border-top-color: rgba(255, 255, 255, 0.2);
+}
+/* Animation for menu options */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.category-type {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: color 0.4s ease, text-shadow 0.4s ease;
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes Favoris Locaux</title>
+    
+    <meta name="description" content="Gestionnaire de favoris personnel hors-ligne">
+    <meta name="theme-color" content="#2c3e50">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Mes Favoris">
+    
+    <link rel="manifest" href="manifest.json">
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="icon-512x512.png">
+    <link rel="apple-touch-icon" href="icon-192x192.png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Montserrat:wght@700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Mes Favoris</h1>
+        <button id="hamburgerBtn" class="hamburger-btn">☰</button>
+        <nav id="themeMenu" class="theme-menu hidden">
+            <ul>
+                <li><button class="theme-btn" data-theme="light">Mode Clair</button></li>
+                <li><button class="theme-btn" data-theme="dark">Mode Sombre</button></li>
+                <li><button class="theme-btn" data-theme="neon">Mode Néon</button></li>
+                <li><button class="theme-btn" data-theme="hacker">Mode Hacker</button></li>
+                <li><button class="theme-btn" data-theme="glass">Mode Verre</button></li>
+                <li><hr style="margin: 0.5rem 0; border: none; height: 1px; background: #ddd;"></li>
+                <li><button id="installBtn" class="theme-btn install-btn" style="display:none;">📱 Installer l'App</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="add-category-section">
+            <h2>Créer une nouvelle catégorie</h2>
+            <div class="input-group">
+                <input type="text" id="newCategoryName" placeholder="Nom de la catégorie">
+                <select id="categoryType">
+                    <option value="liens">Liens</option>
+                    <option value="livres">Livres</option>
+                    <option value="webtoons">Webtoons</option>
+                    <option value="manga">Manga</option>
+                    <option value="anime">Anime</option>
+                    <option value="animaux">Animaux</option>
+                    <option value="marques">Marques</option>
+                    <option value="jeux">Jeux</option>
+                    <option value="musique">Musique</option>
+                    <option value="films">Films</option>
+                    <option value="séries">Séries</option>
+                    <option value="podcasts">Podcasts</option>
+                    <option value="art">Art</option>
+                    <option value="photographie">Photographie</option>
+                    <option value="cuisine">Cuisine</option>
+                    <option value="voyages">Voyages</option>
+                    <option value="technologie">Technologie</option>
+                    <option value="mode">Mode</option>
+                    <option value="sport">Sport</option>
+                    <option value="santé">Santé</option>
+                    <option value="finance">Finance</option>
+                    <option value="éducation">Éducation</option>
+                    <option value="politique">Politique</option>
+                    <option value="environnement">Environnement</option>
+                    <option value="culture">Culture</option>
+                    <option value="histoire">Histoire</option>
+                    <option value="sciences">Sciences</option>
+                    <option value="philosophie">Philosophie</option>
+                    <option value="religion">Religion</option>
+                    <option value="société">Société</option>
+                    <option value="humour">Humour</option>
+                    <option value="citation">Citation</option>
+                    <option value="inspiration">Inspiration</option>
+                    <option value="astuces">Astuces</option>
+                    <option value="tutoriels">Tutoriels</option>
+                    <option value="ressources">Ressources</option>
+                    <option value="outils">Outils</option>
+                    <option value="applications">Applications</option>
+                    <option value="extensions">Extensions</option>
+                    <option value="sites">Sites Web</option>
+                    <option value="blogs">Blogs</option>
+                    <option value="autre">Autre</option>
+                </select>
+                <button id="addCategoryBtn">Ajouter</button>
+            </div>
+        </section>
+
+        <section class="add-link-section">
+            <h2>Ajouter un nouveau élément</h2>
+            <div class="input-group">
+                <select id="linkCategory"></select>
+                <input type="text" id="linkName" placeholder="Nom de l'élément">
+                <input type="url" id="linkURL" placeholder="URL (optionnel)">
+                <button id="addLinkBtn">Ajouter</button>
+            </div>
+        </section>
+
+        <section class="links-container" id="linksContainer"></section>
+    </main>
+
+    <footer>
+        <p>Contact: <a href="mailto:karlluberisse1308@gmail.com">karlluberisse1308@gmail.com</a></p>
+        <p>Tél: <a href="tel:+18495346371">+1 (849) 534-6371</a></p><br>
+        <a href="https://ko-fi.com/karlito08" target="_blank" class="kofi-button-small">
+            <img src="https://cdn.ko-fi.com/cdn/kofi3.png?v=3" alt="Soutenez-moi sur Ko-fi">
+        </a>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

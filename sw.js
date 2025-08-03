@@ -1,14 +1,15 @@
-const CACHE_NAME = 'mes-favoris-cache-v1';
+const CACHE_NAME = 'favorite-cache-v1';
 const urlsToCache = [
-    '/',
-    '/index.html',
-    '/style.css',
-    '/script.js',
-    '/manifest.json',
-    '/icon-192x192.png',
-    '/icon-512x512.png',
+    '/favorite/',
+    '/favorite/index.html',
+    '/favorite/style.css',
+    '/favorite/script.js',
+    '/favorite/manifest.json',
+    '/favorite/icon-192x192.png',
+    '/favorite/icon-512x512.png',
     'https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Montserrat:wght@700&family=Share+Tech+Mono&display=swap'
 ];
+
 
 // Étape 1: Installation du Service Worker et mise en cache des fichiers de l'application
 self.addEventListener('install', event => {
@@ -53,3 +54,4 @@ self.addEventListener('activate', event => {
     })
   );
 });
+
